@@ -1,8 +1,9 @@
 <template>
   <transition
-      v-on:before-enter="beforeEnter"
-      v-on:enter="enter"
-      v-on:leave="leave"
+      appear
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @leave="leave"
       mode="in-out"
       :css="false"
   >

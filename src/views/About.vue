@@ -1,8 +1,9 @@
 <template>
   <transition
-      v-on:before-enter="beforeEnter"
-      v-on:enter="enter"
-      v-on:leave="leave"
+      appear
+      @before-enter="beforeEnter"
+      @enter="enter"
+      @leave="leave"
       :css="false"
       mode="in-out"
   >
@@ -27,7 +28,7 @@
     methods: {
 
         beforeEnter(el){
-            console.log('test');
+
             TweenMax.to(el, 0, {
                 yPercent: 100, scale: 0.9, ease: Power2.easeInOut
             })
@@ -35,6 +36,7 @@
         },
         enter(el, done){
             done();
+            console.log('test');
             TweenMax.to(el, 1, {
                 yPercent: 50, scale: 0.9, ease: Power2.easeInOut,
                 onComplete: function() {
